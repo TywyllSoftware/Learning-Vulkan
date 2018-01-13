@@ -1,0 +1,20 @@
+Buffer Types:
+  Pool Memory 
+  Host Memory
+  Device Memory
+  
+What kind of objects allocted in Pool Memory:
+  Command Buffers - VkCommandPool
+  Descriptor Sets - VkDescriptorPool
+  Queries - VkQueryPool
+ 
+Memory pools can only handle fixed sized memory allocations and avoids problems like memory fragmentation that happens with
+variable size of allocations. They are single threaded memory allocators and they are not thread safe so you need 
+to allocate one pool per thread. Vulkan keeps track of pool allocations and has ability to do bulk reset returning all allocations back
+to the pool.
+
+How to create and destroy pools:
+  Command Buffers - VkCreateCommandPool/VkDestroyCommandPool
+  Descriptor Sets - VkCreateDescriptorPool/VkDestroyDescriptorPool
+  Queries - VkCreateQueryPool/VkDestroyQueryPool
+
