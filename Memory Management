@@ -79,4 +79,6 @@ What command pools are used for:
       Type B is available only in Heap 0
       Type C is available in heaps 1 and 2
       Type D is available in heaps 2 and 3
+      
+      Vulkan quarantee that one memory type is host visible and host coherent and, one memory type is device-local
     
