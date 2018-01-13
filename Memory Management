@@ -68,5 +68,15 @@ What command pools are used for:
                                              or the device rights to the host
       VK_MEMORY_PROPERTY_HOST_CACHED_BIT - The memory is cached on the host which means it will be slower to access
       VK_MEMORY_PROPERTY_LAZILY_ALLOCTED_BIT - Memory is only accessed by the device and is only allocated when actually needed
-    
+      
+    Heap and Types:
+      Type A - Local memory
+      Type B - Local and visible
+      Type C - Local, visible and coherent
+      Type D - Cached
+      
+      Type A is available only in Heap 0
+      Type B is available only in Heap 0
+      Type C is available in heaps 1 and 2
+      Type D is available in heaps 2 and 3
     
