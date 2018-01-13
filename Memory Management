@@ -21,7 +21,7 @@ How to create and destroy pools:
 What command pools are used for:
   Command pools are used for to help track of command buffers.
   There are several flags used when creating command pool:
-    VK_COMMAND_POOL_CREATE_TRANSIENT_BIT - command buffers allocated with be short-lived perhaps for a single frame or single que submission
+    VK_COMMAND_POOL_CREATE_TRANSIENT_BIT - command buffers from the pool be short-lived perhaps for a single frame or single que submission
     VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT - command buffers from the pool can be individually reset. When the reset command
     buffer bit is set you can reset individual command buffers with VkResetCommandBuffer. Command buffers also implicitly reset by calling
     VkBeginCommandBuffer. Also, you can bulk reset by calling VkResetCommandPool.
