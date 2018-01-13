@@ -48,5 +48,25 @@ What command pools are used for:
   Resetting : VkCmdResetQueryPool
   
   Host Memory (Memory that's on your computer and not on the GPU):
+    VkAllocationCallbacks
+    Hierarchy: Instance, Device, Pipeline Cache, Object
     
-  
+  Device Memory (GPU Memory):
+    Used to allocate Images and buffers.
+    Allocate Memory: VkAllocateMemory
+    To bind the memory to vulkan resource: VkBindImageMemory/ VkBindBufferMemory
+    To free memory: VkFreeMemory
+    
+    Device memory is organized into heaps with different memory types.
+    A heap is a memory resource of a particular size
+    A type is a set of memory properties that can be used with the given memory heap
+    VkGetPhysicalDeviceMemoryProperties tells you what kind of memory is available on your GPU.
+    Memory properties:
+      VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT - Most efficient for device access
+      VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT - Memory can be accessed directly by the host using mapping functions like VkMapMemory
+      VK_MEMORY_PROPERTY_HOST_COHERENT_BIT - Do not need to flush or invalidate calls to make host rights visible to the device
+                                             or the device rights to the host
+      VK_MEMORY_PROPERTY_HOST_CACHED_BIT - The memory is cached on the host which means it will be slower to access
+      VK_MEMORY_PROPERTY_LAZILY_ALLOCTED_BIT - Memory is only accessed by the device and is only allocated when actually needed
+    
+    
