@@ -46,3 +46,7 @@ What command pools are used for:
   Begin using: VkCmdBeginQuery
   End using: VkCmdEndQuery
   Resetting : VkCmdResetQueryPool
+  
+  Host Memory (Memory that's on your computer and not on the GPU):
+    
+  
