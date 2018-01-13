@@ -82,6 +82,16 @@ What command pools are used for:
       Type D is available in heaps 2 and 3
       
       Vulkan quarantee that one memory type is host visible and host coherent and, one memory type is device-local
+    
+    Good strategy for minimizing allocations:
+      Use suballocations - make few large memory objects.
+      Create a large memory with VkAllocateMemory and mange suballocations yourself using block offset parameter
+      when calling VkBindMemory
+      You can use one block per available memory type. One for mappable memory and one for everything else.
+      A more refined strategy is to use different memory blocks for different sizes and lifetimes. Immediate, per-frame, per game level
+      or a pool of linear allocations and one for large allocations.
+      
+      Vulkan allows you to share memory between objects but given the effort and trying to keep this in sync is just not recommemded.
       
     
     
