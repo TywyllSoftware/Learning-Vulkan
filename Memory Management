@@ -56,6 +56,7 @@ What command pools are used for:
     Allocate Memory: VkAllocateMemory
     To bind the memory to vulkan resource: VkBindImageMemory/ VkBindBufferMemory
     To free memory: VkFreeMemory
+    OS allows for a limited number of allocations - VkPhysicalDeviceLimits
     
     Device memory is organized into heaps with different memory types.
     A heap is a memory resource of a particular size
@@ -81,4 +82,6 @@ What command pools are used for:
       Type D is available in heaps 2 and 3
       
       Vulkan quarantee that one memory type is host visible and host coherent and, one memory type is device-local
+      
+    
     
