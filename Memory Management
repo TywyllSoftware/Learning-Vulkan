@@ -26,3 +26,20 @@ What command pools are used for:
     buffer bit is set you can reset individual command buffers with VkResetCommandBuffer. Command buffers also implicitly reset by calling
     VkBeginCommandBuffer. Also, you can bulk reset by calling VkResetCommandPool.
     Make sure you actually done doing with that command buffer before resetting
+    
+ What Descriptor Pool are used for:
+  There are several flags used when creating descriptor pool:
+    VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT - allows descriptor allocations to return to the pool individually
+    Allocate individual sets: VkAllocateDescriptorSets
+    Free individual sets: VkFreeDescriptorSets
+    Reseting pool: VkResetDescriptorPool
+    
+ Queries:
+  Queries are very small in memory and homogeneous. Often just a 64-bit integer per query. It does not make sense
+  to manage them individually. So Vulkan API allows them to be allocated in pools in contiguous allocations. When
+  creating queries there aren't any creation flags like for other pools. You just need to specify which
+  query type pool is going to allocate.
+  Query types: Occlusion, Pipeline Statistics, Timestamp
+  Begin using: VkCmdBeginQuery
+  End using: VkCmdEndQuery
+  Resetting : VkCmdResetQueryPool
